@@ -1,0 +1,8 @@
+{
+  "name": "ngTooltip",
+  "version": "0.0.1",
+  "description": "Simple angular tooltip directive",
+  "main": "ngTooltip.js",
+  "author": "Thco <perso@thco.fr>",
+  "license": "MIT"
+}
