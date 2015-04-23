@@ -36,7 +36,6 @@
 
       // Hide the tip and remove events
       scope.$on('ngTooltip:show', function() {
-        leave(); // Juste destroy the current info even if it should be hidden
         element.on('mouseenter', enter);
         element.on('mouseleave', leave);
         element.on('mousemove', move);
@@ -44,6 +43,11 @@
 
       // Mouseenter event
       enter = function() {
+        // Avoid multiple tooltip container
+        if (container) {
+          leave();
+        }
+
         container = angular
           .element('<div></div>')
           .addClass('tooltip')
